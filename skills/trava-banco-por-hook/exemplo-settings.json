@@ -1,0 +1,23 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__.*__(execute_sql|apply_migration|query|run_sql|deploy_edge_function|pause_project|restore_project|create_project|create_branch|delete_branch|merge_branch|reset_branch|rebase_branch)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python",
+            "args": [".claude/hooks/trava-banco.py"],
+            "timeout": 15,
+            "onFailure": "block",
+            "statusMessage": "Conferindo a trava do banco"
+          }
+        ]
+      }
+    ]
+  },
+  "env": {
+    "TRAVA_BANCO_PROJETO": "id-do-projeto-de-producao",
+    "TRAVA_BANCO_NOME": "banco de produção"
+  }
+}

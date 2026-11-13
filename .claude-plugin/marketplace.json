@@ -1,0 +1,61 @@
+{
+  "name": "cadu-skills",
+  "owner": {
+    "name": "Cadu Coelho"
+  },
+  "metadata": {
+    "description": "Skills para o Claude Code em português do Brasil: debate entre IAs, continuidade de projetos, migração do Codex, backup da configuração, travas de banco e auditoria de sites.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "mesa-redonda",
+      "description": "Claude, GPT e Gemini debatem como especialistas em rodadas encadeadas até um consenso, com Claude moderando.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/mesa-redonda"]
+    },
+    {
+      "name": "retomar-projeto",
+      "description": "Retoma um projeto depois de um intervalo, conferindo o que mudou sem refazer o diagnóstico inteiro.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/retomar-projeto"]
+    },
+    {
+      "name": "novo-chat",
+      "description": "Cria um chat novo do projeto já padronizado: contexto em 10 seções, índice e grupo na barra lateral do app.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/novo-chat"]
+    },
+    {
+      "name": "webaudit360",
+      "description": "Auditoria de sites em dez pilares, com nível de evidência por achado e plano priorizado.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/webaudit360"]
+    },
+    {
+      "name": "migrar-do-codex",
+      "description": "Roteiro para migrar projetos do OpenAI Codex para o Claude Code, com validação cruzada pelo próprio Codex.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/migrar-do-codex"]
+    },
+    {
+      "name": "backup-claude-config",
+      "description": "Backup da configuração do Claude Code em Git privado, com barreira de segredos, restauração e cofre AES-256-GCM.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/backup-claude-config"]
+    },
+    {
+      "name": "trava-banco-por-hook",
+      "description": "Hook PreToolUse que deixa o Claude ler o banco livremente, pede confirmação para escrita e bloqueia o destrutivo.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/trava-banco-por-hook"]
+    }
+  ]
+}

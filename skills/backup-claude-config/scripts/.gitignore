@@ -1,0 +1,23 @@
+# Credenciais e segredos: nunca versionar
+*.dpapi
+*.pem
+*.key
+*.pfx
+.env
+.env.*
+auth.json
+.claude.json
+.credentials.json
+*secret*
+*token*
+
+# Perfis de conexão com endereços internos (recriados pelo cofre)
+connections.json
+
+# Dependências, caches e lixo
+node_modules/
+vendor/
+__pycache__/
+*.pyc
+*.log
+tmp/

@@ -1,0 +1,3 @@
+# Pastas de skills de terceiros que o sincronizar.ps1 não copia (reinstale pela origem).
+# Um nome por linha.
+exemplo-skill-de-terceiro

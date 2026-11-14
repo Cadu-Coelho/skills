@@ -56,6 +56,13 @@
       "source": "./",
       "strict": false,
       "skills": ["./skills/trava-banco-por-hook"]
+    },
+    {
+      "name": "fluxo",
+      "description": "Menu com submenus para escolher como tocar um trabalho de código, conduzindo as skills do Matt Pocock (requer o plugin mattpocock-skills).",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/fluxo"]
     }
   ]
 }

@@ -48,6 +48,8 @@ Ou copie a pasta da skill para `~/.claude/skills/` (todos os projetos) ou para `
 | [**backup-claude-config**](skills/backup-claude-config) | Backup da configuração do Claude Code num Git privado, com barreira contra segredos, restauração em máquina nova e cofre AES-256-GCM para as credenciais. | Windows, PowerShell 7 |
 | [**trava-banco-por-hook**](skills/trava-banco-por-hook) | Hook `PreToolUse` para conectores de banco (Supabase, Postgres): leitura livre, escrita pede confirmação, `DROP`, `TRUNCATE` e desligar RLS são bloqueados. | Python |
 
+| [**fluxo**](skills/fluxo) | Menu (com submenus, por clique ou número) para escolher como tocar um trabalho de código: direto, ciclo completo (afinar a ideia, spec, tarefas, implementar com teste, revisar), uma etapa só ou apoio para entender. Conduz as skills do Matt Pocock sem você decorar comandos. | Plugin [mattpocock-skills](#skills-de-terceiros-que-uso-e-recomendo) |
+
 ### Destaque: mesa redonda
 
 ```
@@ -59,6 +61,15 @@ Consenso: ...    Em aberto: ...    Quem mudou de ideia: ...    Ata completa em ~
 ```
 
 Cada modelo responde sem ferramentas e sem acesso a arquivos. Antes de enviar qualquer coisa para a OpenAI ou o Google, a skill avisa se o tema envolve dados de trabalho ou de terceiros.
+
+## Skills de terceiros que uso e recomendo
+
+**[Skills For Real Engineers](https://github.com/mattpocock/skills), de Matt Pocock** (licença MIT). Uso no dia a dia e recomendo. É um pacote de skills para trabalhar com o agente em ciclo, em vez de pedir "faz aí": entrevista para afinar a ideia (`grill-me`), spec (`to-spec`), tarefas pequenas de ponta a ponta (`to-tickets`), implementação com teste primeiro (`tdd`), revisão contra padrões e spec (`code-review`), diagnóstico de bugs difíceis e outras. As skills são dele, não deste repositório. Minha skill [**fluxo**](skills/fluxo) só oferece um menu em português por cima delas.
+
+```
+/plugin marketplace add mattpocock/skills
+/plugin install mattpocock-skills@mattpocock
+```
 
 ## Extras
 
@@ -88,7 +99,8 @@ skills/
 ├── webaudit360/                  SKILL.md + references/
 ├── migrar-do-codex/              SKILL.md + modelos/
 ├── backup-claude-config/         SKILL.md + scripts/ (sincronizar, restaurar, cofre)
-└── trava-banco-por-hook/         SKILL.md + trava-banco.py + exemplo-settings.json
+├── trava-banco-por-hook/         SKILL.md + trava-banco.py + exemplo-settings.json
+└── fluxo/                        SKILL.md (menu sobre o pacote do Matt Pocock)
 extras/
 └── notepad-markdown-default/     plugin C++, DLL, scripts e skill
 assets/                           imagens do README
@@ -111,6 +123,7 @@ Claude Code skills written in Brazilian Portuguese, built and tested in daily re
 - **migrar-do-codex**: playbook for migrating from OpenAI Codex to Claude Code, ending with a cross-check performed by Codex itself.
 - **backup-claude-config**: versioned backup of your Claude Code setup in a private Git repo, with a secret-scanning gate, restore script and an AES-256-GCM credential vault.
 - **trava-banco-por-hook** (database guard): a `PreToolUse` hook that allows reads, asks before writes and blocks destructive SQL on MCP database connectors.
+- **fluxo** (workflow menu): a numbered menu with submenus to pick how to run a coding task (direct, full cycle, a single stage, or learning support), driving Matt Pocock's skills so you don't have to memorize commands. Requires his plugin, which I use and recommend: https://github.com/mattpocock/skills.
 - **Extras:** a small Notepad++ plugin (C++) that makes every new tab default to Markdown.
 
 Install with `/plugin marketplace add Cadu-Coelho/skills`. Licensed under MIT.
